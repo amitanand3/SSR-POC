@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./../css/products.css">
+    <title>Products</title>
+</head>
+
+<body>
+    <h1>Products Home</h1>
+    {{#each products}} 
+    <div style="width: 220px;">
+        <div >
+            <img style="height: 200px; width: 200px;" src={{this.imgUrl}} />
+            <div style="text-align: center">
+                <label>{{this.name}}</label>
+            </div>
+            <div style="text-align: center">
+                    <label>{{this.price}}</label>
+            </div>
+            <div style="text-align: center">
+                <button>Add to cart</button>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</body>
+</html>

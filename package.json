@@ -1,0 +1,22 @@
+{
+  "name": "nodedum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon node server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "glob": "^7.1.4",
+    "hapi": "*",
+    "hbs": "*",
+    "inert": "^5.1.3",
+    "vision": "*"
+  }
+}
