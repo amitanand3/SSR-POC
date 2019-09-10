@@ -8,16 +8,16 @@
 <body>
     <h1>Products Home</h1>
     {{#each products}} 
-    <div style="width: 220px;">
+    <div>
         <div >
-            <img style="height: 200px; width: 200px;" src={{this.imgUrl}} />
-            <div style="text-align: center">
+            <img src={{this.imgUrl}} />
+            <div class="center">
                 <label>{{this.name}}</label>
             </div>
-            <div style="text-align: center">
+            <div class="center">
                     <label>{{this.price}}</label>
             </div>
-            <div style="text-align: center">
+            <div class="center">
                 <button>Add to cart</button>
             </div>
         </div>
