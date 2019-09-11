@@ -1,9 +1,9 @@
 'use strict';
 
-const Hapi = require('hapi');
-const Vision = require('vision');
-const hbs = require('hbs');
-const Inert = require('inert');
+const Hapi = require('@hapi/hapi');
+const Vision = require('@hapi/vision');
+const Inert = require('@hapi/inert');
+const handlebars = require('handlebars');
 
 const server = Hapi.server({
     port: 3000,
@@ -16,7 +16,7 @@ const init = async () => {
 
     server.views({
         engines: {
-            html: hbs
+            html: handlebars
         },
         relativeTo: __dirname,
         path: 'templates'

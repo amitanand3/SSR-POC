@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <link rel="stylesheet" href="./../css/products.css">
-    <title>Products</title>
-</head>
+    <head>
+        <link rel="stylesheet" href="./../css/products.css">
+        <title>Products</title>
+    </head>
 
-<body>
-    <h1>Products Home</h1>
-    {{#each products}} 
-    <div>
-        <div >
-            <img src={{this.imgUrl}} />
-            <div class="center">
-                <label>{{this.name}}</label>
+    <body>
+        <h1>Products Home</h1>
+        <div class="container">
+        {{#each products}} 
+            <div class="prod">
+                <img src={{this.imgUrl}} />
+                <div class="center">
+                    <label>{{this.name}}</label>
+                </div>
+                <div class="center">
+                        <label>$ {{this.price}}</label>
+                </div>
+                <div class="center">
+                    <button>Add to cart</button>
+                </div>
             </div>
-            <div class="center">
-                    <label>{{this.price}}</label>
-            </div>
-            <div class="center">
-                <button>Add to cart</button>
-            </div>
+        {{/each}}
         </div>
-    </div>
-    {{/each}}
-</body>
+    </body>
 </html>

@@ -1,22 +1,20 @@
 {
-  "name": "nodedum",
+  "name": "ssr-poc",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is POC for SSR using NodeJS, HapiJS and HandlebarsJS",
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "dev": "nodemon node server"
+    "dev": "nodemon --watch ./css --watch ./data --watch ./routes --watch ./templates server.js"
   },
-  "author": "",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.19.2"
   },
   "dependencies": {
-    "glob": "^7.1.4",
-    "hapi": "*",
-    "hbs": "*",
-    "inert": "^5.1.3",
-    "vision": "*"
+    "@hapi/hapi": "^18.3.2",
+    "@hapi/inert": "^5.2.1",
+    "@hapi/vision": "^5.5.3",
+    "handlebars": "^4.2.0"
   }
 }
