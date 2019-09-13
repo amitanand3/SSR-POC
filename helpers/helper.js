@@ -34,3 +34,8 @@ function removeFromCart(ctx) {
     selectedProds.splice(ctx.index, 1);
     goToCart();
 }
+
+function purchase() {
+    alert("Hurray!! you have succesfully purchased items.");
+    window.location = "/";
+}

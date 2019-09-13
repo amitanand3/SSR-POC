@@ -7,6 +7,7 @@
     </head>
     <body>
         <h1>Cart</h1>
+        {{#if selectedProds}}
         <h3>Selected Products: </h3>
         <div class="container">
         {{#each selectedProds}}
@@ -27,8 +28,23 @@
             </div>
         {{/each}}
         </div>
-        <div class="m-t-10">
-            <button onclick="Purchase()">Purchase</button>
+        <div>
+            <label class="m-t-10">
+                <strong>Total Price: $ {{getTotal}}</strong>
+            </label>
         </div>
+        <div class="m-t-10">
+            <button onclick="purchase()">Purchase</button>
+        </div>
+        {{else}}
+            <div>
+                <strong>No Item Selected</strong>
+            </div>
+            <div class="m-t-10">
+                <strong>
+                    <a href='/products'>SELECT PRODUCTS</a>
+                </strong>
+            </div>
+        {{/if}}
     </body>
 </html>

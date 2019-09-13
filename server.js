@@ -27,6 +27,14 @@ const init = async () => {
     
     handlebars.registerHelper('getThis', (that) => JSON.stringify(that.data));
 
+    handlebars.registerHelper('getTotal', (context) => {
+        let total = 0;
+        context.data.root.selectedProds.forEach((obj) => {
+            total += (obj.qty * obj.price);
+        });
+        return total;
+    });
+
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
 };

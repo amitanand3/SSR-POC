@@ -26,7 +26,9 @@ module.exports = [
             view: {
                 template: 'index',
                 context: {
-                    title: 'Welcome to SSR POC',
+                    title: `<h2>Welcome to SSR POC</h2> <p>This Project is basically designed to practice on SSR using
+                    hapi and handlebar. with help of this project you will be able to view list of products
+                    add them to cart and finally checkout.</p>`,
                     message: '<a href="/products">View Products</a>'
                 }
             }
