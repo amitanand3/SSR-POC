@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart</title>
+        <link rel="stylesheet" href="./../css/products.css">
+        <script src="./../helpers/helper.js"></script>
+    </head>
+    <body>
+        <h1>Cart</h1>
+        <h3>Selected Products: </h3>
+        <div class="container">
+        {{#each selectedProds}}
+            <div class="prod">
+                <img src={{this.imgUrl}} />
+                <div class="center">
+                    <label>{{this.name}}</label>
+                </div>
+                <div class="center">
+                    <label>Units: {{this.qty}}</label>
+                </div>
+                <div class="center">
+                        <label>$ {{this.price}}</label>
+                </div>
+                <div class="center">
+                    <button onclick="removeFromCart()">Remove from cart</button>
+                </div>
+            </div>
+        {{/each}}
+        </div>
+        <div>
+            <button onclick="Purchase()">Purchase</button>
+        </div>
+    </body>
+</html>

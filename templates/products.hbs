@@ -2,6 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="./../css/products.css">
+        <script src="./../helpers/helper.js"></script>
         <title>Products</title>
     </head>
 
@@ -18,10 +19,13 @@
                         <label>$ {{this.price}}</label>
                 </div>
                 <div class="center">
-                    <button>Add to cart</button>
+                    <button onclick="addToCart({{getThis}})">Add to cart</button>
                 </div>
             </div>
         {{/each}}
+        </div>
+        <div class="center">
+            <button onclick="goToCart()">Go to cart</button>
         </div>
     </body>
 </html>

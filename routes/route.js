@@ -1,3 +1,5 @@
+let cart = [];
+
 module.exports = [
     {  
         method: 'GET',
@@ -6,6 +8,15 @@ module.exports = [
           directory: { 
             path: 'css'
           }
+        }
+    },
+    {  
+        method: 'GET',
+        path: '/helpers/{file*}',
+        handler: {
+            directory: {
+                path: 'helpers'
+            }
         }
     },
     {
@@ -30,16 +41,19 @@ module.exports = [
         }
     },
     {
-        path: '/checkout',
+        path: '/postCart',
         method: 'POST',
-        handler: {
-            view: {
-                template: 'checkout',
-                context: {
-                    title: 'Using handlebars in Hapi',
-                    message: 'Tutorial'
-                }
-            }
+        handler: (req) => {
+            cart = req.payload;  
+            return cart;
+        }
+    },
+    {
+        path: '/cart',
+        method: 'GET',
+        handler: (req, h) => {
+            cart = cart && JSON.parse(cart);
+            return h.view('cart', cart);
         }
     }
 ];

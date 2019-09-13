@@ -10,19 +10,22 @@ const server = Hapi.server({
     host: 'localhost'
 });
 
+
 const init = async () => {
     await server.register(Inert);
     await server.register(Vision);
-
+    
     server.views({
         engines: {
-            html: handlebars
+            hbs: handlebars
         },
         relativeTo: __dirname,
         path: 'templates'
     });
-
+    
     server.route(require('./routes/route'));
+    
+    handlebars.registerHelper('getThis', (that) => JSON.stringify(that.data.root.products[that.data.index]));
 
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);
