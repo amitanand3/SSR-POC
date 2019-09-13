@@ -25,7 +25,7 @@ const init = async () => {
     
     server.route(require('./routes/route'));
     
-    handlebars.registerHelper('getThis', (that) => JSON.stringify(that.data.root.products[that.data.index]));
+    handlebars.registerHelper('getThis', (that) => JSON.stringify(that.data));
 
     await server.start();
     console.log(`Server running at: ${server.info.uri}`);

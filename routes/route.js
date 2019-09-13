@@ -52,8 +52,8 @@ module.exports = [
         path: '/cart',
         method: 'GET',
         handler: (req, h) => {
-            cart = cart && JSON.parse(cart);
-            return h.view('cart', cart);
+            cart = cart || [];
+            return h.view('cart', JSON.parse(cart));
         }
     }
 ];

@@ -1,6 +1,8 @@
 let selectedProds = [];
 
 function addToCart(ctx) {
+    ctx = ctx.root.products[ctx.index];
+
     if (!selectedProds.length) {
         selectedProds.push(ctx);
     } else {
@@ -25,4 +27,10 @@ function goToCart() {
     }).then(() => {
         window.location = '/cart';
     });
+}
+
+function removeFromCart(ctx) {
+    selectedProds = (selectedProds.length && selectedProds) || (ctx.root.selectedProds);
+    selectedProds.splice(ctx.index, 1);
+    goToCart();
 }
